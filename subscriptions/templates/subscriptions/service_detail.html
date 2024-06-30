@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block content %}
+<h2>{{ service.get_type_display }} - {{ service.company }}</h2>
+<p>Mode of Payment: {{ service.get_mode_of_payment_display }}</p>
+
+<h3>Subscribed Users</h3>
+<ul>
+  {% for subscription in service.subscription_set.all %}
+  <li>
+    {{ subscription.user }} - {{subscription.amount}} -
+    {{subscription.date_created }}
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

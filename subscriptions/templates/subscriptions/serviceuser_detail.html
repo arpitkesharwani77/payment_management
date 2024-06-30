@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block content %}
+<h2>{{ user.name }}'s Details</h2>
+<p>Email: {{ user.email }}</p>
+<p>Age: {{ user.age }}</p>
+<p>Gender: {{ user.get_gender_display }}</p>
+
+<h3>Subscriptions</h3>
+<ul>
+  {% for subscription in user.subscription_set.all %}
+  <li>
+    {{ subscription.service }} - {{ subscription.amount }} -
+    {{subscription.date_created }}
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

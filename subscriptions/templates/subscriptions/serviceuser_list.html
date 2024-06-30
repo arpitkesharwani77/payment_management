@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block content %}
+<h2>Service Users</h2>
+<ul>
+  {% for user in users %}
+  <li>
+    <a class="btn btn-primary" href="{% url 'user_detail' user.id %}"
+      >{{ user.name }}</a
+    >
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

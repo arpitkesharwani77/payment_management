@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block content %}
+<h2>Services</h2>
+<ul>
+  {% for service in services %}
+  <li>
+    <a class="btn btn-primary" href="{% url 'service_detail' service.type %}"
+      >{{ service }}</a
+    >
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
